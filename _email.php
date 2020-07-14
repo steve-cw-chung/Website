@@ -9,7 +9,8 @@ $subject = str_replace("'", "''", $subject);
 //$subject = "=?".$charset."?B?".base64_encode($subject)."?=\n";
 $message = "Name: ".$name."\nMessage: ".$_POST['message']; //message
 $message = str_repace("'", "''", $message);
-$headers = "From: ".$Email."\r\n";
+$headers = "Content-type: text/html; \r\n";
+$headers .= "From: ".$Email."\r\n";
 $mail_result = mail($to, $subject, $message, $headers);
 
 if($mail_result) { ?>
